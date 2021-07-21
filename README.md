@@ -24,8 +24,18 @@ assignment shouldn't take more than 3-4 hours.
 - One filter for regions: Africa, Oceania, Europe, North America, South
   America, Central America, Asia
 
+  - Multiple filters are allowed to be selected and each one is an **OR**
+    filter. Example:
+    - "Africa" selected - only companies that are in "Africa"
+    - "Africa, Oceania" selected - both companies that are in "Africa" and
+      "Oceania"
+
 - Range filter for Market Cap: Data is in "millions". Range options should be $0M,
-  $20M, $40M, $60M, $80M, $100M, $100M+
+  $20M, $40M, $60M, $80M, $100M, $100M+ and it'd be a slider for min and max
+  values. Example:
+  - Min: "$0M", Max: "$100M+" - All companies
+  - Min: "$60M", Max: "80M" - Companies with a market cap between 60 and 80
+    (range values inclusive)
 
 ### Pagination
 
