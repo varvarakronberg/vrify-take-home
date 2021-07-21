@@ -3,13 +3,18 @@
 ## Background
 
 There is a data.json included that has a list of companies that we'd like to
-display on a page. The page will include two filters and pagination.
+display on a page. The page will include two filters and pagination. The
+assignment shouldn't take more than 3-4 hours.
 
 ## Requirements
 
 ### Results
 
 - Should show company image
+  - Images should all have the smae dimensions
+  - In the data provided, the images are of different dimensions. The images
+    should all be the dimensions and the images should be cropped to fit
+    the column (not stretched)
 - Should have company name underneath image
 
 ### Filters
@@ -31,6 +36,22 @@ display on a page. The page will include two filters and pagination.
   size.
 
 - Filters can be placed anywhere on mobile view
+
+### Tests
+
+- Include any tests you find necessary
+
+### Examples
+
+**Note: the assignment doesn't have to match these screenshots, they're just
+examples so you can get an idea of what the end result "could" look like**
+
+One column:
+![](./example-images/one-column.png)
+Two column:
+![](./example-images/two-column.png)
+Three column:
+![](./example-images/three-column.png)
 
 ## Submitting a solution
 
