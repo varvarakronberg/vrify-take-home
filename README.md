@@ -6,6 +6,8 @@ There is a data.json included that has a list of companies that we'd like to
 display on a page. The page will include two filters and pagination. The
 assignment shouldn't take more than 3-4 hours.
 
+- Use any modern reactive webapp framework (ex/ React, Vue, Angular, etc.)
+
 ## Requirements
 
 ### Results
