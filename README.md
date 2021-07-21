@@ -1,4 +1,4 @@
-# VRFY Web Coding Assignment
+# Vrify Web Coding Assignment
 
 ## Background
 
@@ -11,10 +11,10 @@ assignment shouldn't take more than 3-4 hours.
 ### Results
 
 - Should show company image
-  - Images should all have the smae dimensions
+  - Images should all have the same dimensions
   - In the data provided, the images are of different dimensions. The images
-    should all be the dimensions and the images should be cropped to fit
-    the column (not stretched)
+    should all have the same dimensions and the images should be **cropped** to
+    fit the column (**not stretched**)
 - Should have company name underneath image
 
 ### Filters
