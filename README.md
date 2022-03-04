@@ -51,7 +51,7 @@ assignment shouldn't take more than 3-4 hours.
 
 ### Tests
 
-- Include any tests you find necessary
+- Tests should be included - include any tests you find necessary
 
 ### Examples
 
