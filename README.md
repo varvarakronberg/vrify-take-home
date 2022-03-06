@@ -1,5 +1,7 @@
 # Vrify Web Coding Assignment
 
+This app is deployed here: [https://vrify-vkronberg.vercel.app/](https://vrify-vkronberg.vercel.app/).
+
 ## Requirements
 
 There is a data.json included that has a list of companies that we'd like to
