@@ -62,9 +62,10 @@ export default function MarketCapSlider({ marketCapRange, onMarketCapChange }) {
     };
 
     return (
-        <Box sx={{ width: 250 }}>
+        <Box sx={{ m: 1, width: 220 }}>
             <Slider
-                aria-label="Market Cap"
+                size='large'
+                getAriaLabel={() => "Market Cap"}
                 defaultValue={[0, 120]}
                 value={value}
                 onChange={handleChange}

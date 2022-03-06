@@ -51,36 +51,34 @@ export default function RegionSelector({ regions, onRegionsChange }) {
     };
 
     return (
-        <div className="redion-selector">
-            <FormControl sx={{ m: 1, width: 300 }}>
-                <InputLabel id="demo-multiple-chip-label">Region</InputLabel>
-                <Select
-                    labelId="demo-multiple-chip-label"
-                    id="demo-multiple-chip"
-                    multiple
-                    value={selectedRegions}
-                    onChange={handleChange}
-                    input={<OutlinedInput id="select-multiple-chip" label="Region" />}
-                    renderValue={(selected) => (
-                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                            {selected.map((value) => (
-                                <Chip key={value} label={value} />
-                            ))}
-                        </Box>
-                    )}
-                    MenuProps={MenuProps}
-                >
-                    {REGIONS.map((region) => (
-                        <MenuItem
-                            key={region}
-                            value={region}
-                            style={getStyles(region, selectedRegions, theme)}
-                        >
-                            {region}
-                        </MenuItem>
-                    ))}
-                </Select>
-            </FormControl>
-        </div>
+        <FormControl sx={{ m: 1, width: 220 }}>
+            <InputLabel id="demo-multiple-chip-label">Region</InputLabel>
+            <Select
+                labelId="demo-multiple-chip-label"
+                id="demo-multiple-chip"
+                multiple
+                value={selectedRegions}
+                onChange={handleChange}
+                input={<OutlinedInput id="select-multiple-chip" label="Region" />}
+                renderValue={(selected) => (
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                        {selected.map((value) => (
+                            <Chip key={value} label={value} />
+                        ))}
+                    </Box>
+                )}
+                MenuProps={MenuProps}
+            >
+                {REGIONS.map((region) => (
+                    <MenuItem
+                        key={region}
+                        value={region}
+                        style={getStyles(region, selectedRegions, theme)}
+                    >
+                        {region}
+                    </MenuItem>
+                ))}
+            </Select>
+        </FormControl>
     );
 }

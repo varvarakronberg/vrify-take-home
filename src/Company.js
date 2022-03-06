@@ -13,8 +13,8 @@ export default function Company({ imageUrl, name, region, cap }) {
                 height="140"
                 image={imageUrl}
             />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+            <CardContent align="left">
+                <Typography gutterBottom variant="h5" component="div" >
                     {name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">

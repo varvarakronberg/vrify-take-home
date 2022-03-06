@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Pagination from '@mui/material/Pagination';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
 import RegionSelector from './RegionSelector.js'
 import MarketCapSlider from './MarketCapSlider.js'
 import Company from './Company.js'
@@ -78,23 +79,25 @@ function App() {
 
   return (
 
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container columns={{ xs: 1, sm: 1, md: 8, lg: 8 }}>
+    <Box sx={{ flexGrow: 1, m: 5 }} >
+      <Grid container columns={{ xs: 1, sm: 1, md: 8, lg: 8 }} align="center" justify="center" >
         <Grid item xs={1} sm={3} md={3}>
-          <RegionSelector regions={regions} onRegionsChange={handleRegionsChange} />
-          <MarketCapSlider marketCapRange={marketCapRange} onMarketCapChange={handleMarketCapChange} />
+          <Container>
+            <RegionSelector regions={regions} onRegionsChange={handleRegionsChange} />
+            <MarketCapSlider marketCapRange={marketCapRange} onMarketCapChange={handleMarketCapChange} />
+          </Container>
         </Grid>
         <Grid item xs={1} sm={1} md={5} lg={5}>
           <Box>
-            <Grid container spacing={2} columns={{ xs: 1, sm: 1, md: 2, lg: 3 }}>
+            <Grid container spacing={2} columns={{ xs: 1, sm: 1, md: 2, lg: 3 }} align="center" justify="center" >
               {currentPageData && currentPageData.length > 0 && currentPageData.map(company => {
-                return <Grid item xs={1} sm={1} md={1} lg={1}>
+                return <Grid key={company.id} item xs={1} sm={1} md={1} lg={1}>
                   <Company imageUrl={company.image_url} name={company.company_name} region={company.region} cap={company.market_cap} />
                 </Grid>
               })}
             </Grid>
           </Box>
-          <Pagination count={numberOfPages} page={currentPage} onChange={handlePageChange} />
+          <Box sx={{ m: 4, width: 'auto' }} ><Pagination count={numberOfPages} page={currentPage} onChange={handlePageChange} /></Box>
         </Grid>
       </Grid>
     </Box>
