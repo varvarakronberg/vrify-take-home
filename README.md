@@ -1,14 +1,12 @@
 # Vrify Web Coding Assignment
 
-## Background
+## Requirements
 
 There is a data.json included that has a list of companies that we'd like to
 display on a page. The page will include two filters and pagination. The
 assignment shouldn't take more than 3-4 hours.
 
 - Use any modern reactive webapp framework (ex/ React, Vue, Angular, etc.)
-
-## Requirements
 
 ### Results
 
@@ -65,16 +63,10 @@ Two column:
 Three column:
 ![](./example-images/three-column.png)
 
-## Submitting a solution
+## Solution
 
-1. Download this repo
-2. Complete the problem outlined in the `Requirements` section
-3. In your personal public GitHub repo, create a new public repo with this implementation
-4. Provide this link to your contact
-
-## Help
-
-If you have any questions regarding requirements, do not hesitate to email your contact for clarification.
+The submitted solution is using create-react-app, responsive styles for main components are done with MaterialUi library.
+Coded in 4 hours (without implementing tests)
 
 ## Installation and running this solution
 
