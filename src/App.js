@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import RegionSelector from './RegionSelector.js'
-import MarketCapSlider from './MarketCapSlider.js'
+import MarketCapSlider, { MAX_CAP_VALUE } from './MarketCapSlider.js'
 import Company from './Company.js'
 import './App.css';
 
@@ -19,7 +19,7 @@ function App() {
   const [filteredData, setFilteredData] = useState([]);
   const [currentPageData, setCurrentPageData] = useState([]);
   const [regions, setRegions] = useState([]);
-  const [marketCapRange, setMarketCapRange] = useState([0, 120]);
+  const [marketCapRange, setMarketCapRange] = useState([0, MAX_CAP_VALUE]);
   const [currentPage, setCurrentPage] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(1);
 
@@ -33,12 +33,9 @@ function App() {
       }
     }
     ).then((response) => {
-      console.log(response)
       return response.json();
     }).then((myJson) => {
-      console.log(myJson);
       setData(myJson);
-
     });
   }
   useEffect(() => {
@@ -47,7 +44,7 @@ function App() {
 
   useEffect(() => {
     let minCap = marketCapRange[0];
-    let maxCap = marketCapRange[1] === 120 ? Number.MAX_SAFE_INTEGER : marketCapRange[1];
+    let maxCap = marketCapRange[1] === MAX_CAP_VALUE ? Number.MAX_SAFE_INTEGER : marketCapRange[1];
     const filteredMarketCap = data.filter(company => { return company.market_cap >= minCap && company.market_cap <= maxCap });
     const filteredRegions = filteredMarketCap.filter(company => { return regions.length === 0 || regions.map(mapRegionName).includes(company.region) })
     setFilteredData(filteredRegions);

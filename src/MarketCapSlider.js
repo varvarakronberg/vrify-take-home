@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 
+export const MAX_CAP_VALUE = 120;
 
 const marks = [
     {
@@ -28,7 +29,7 @@ const marks = [
         label: '$100M',
     },
     {
-        value: 120,
+        value: MAX_CAP_VALUE,
         label: '$100M+',
     }
 ];
@@ -66,11 +67,11 @@ export default function MarketCapSlider({ marketCapRange, onMarketCapChange }) {
             <Slider
                 size='large'
                 getAriaLabel={() => "Market Cap"}
-                defaultValue={[0, 120]}
+                defaultValue={[0, MAX_CAP_VALUE]}
                 value={value}
                 onChange={handleChange}
                 valueLabelFormat={valueLabelFormat}
-                max={120}
+                max={MAX_CAP_VALUE}
                 getAriaValueText={valuetext}
                 step={null}
                 marks={marks}
