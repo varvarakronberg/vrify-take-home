@@ -38,15 +38,12 @@ function App() {
   const [companiesCounter, setCompaniesCounter] = useState(0);
   const [tabMenuValue, setTabMenuValue] = useState('1');
   const [searchTarget, setSearchTarget] = useState('')
-  const [sortMethod, setSortMethod] = useState('')
-  let companiesLabel = `Companies (${companiesCounter})`
-
+  const [sortMethod, setSortMethod] = useState('');
 
   const ITEMS_PER_PAGE = 8;
 
-
   const getData = () => {
-    fetch('http://localhost:5000/data?minMarketCap=50', {
+    fetch('data.json', {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -83,7 +80,6 @@ function App() {
     const lastElement = currentPage * ITEMS_PER_PAGE;
     setCurrentPageData(filteredData.slice(firstElement, lastElement));
     setCompaniesCounter(filteredData.length);
-
   }, [filteredData, currentPage]);
 
   useEffect(() => {
@@ -146,26 +142,24 @@ function App() {
         </Grid>
       </Grid>
       <Box sx={{ flexGrow: 1, m: 5 }}>
-        <Grid container spacing={2} justify="center" >
+        <Grid container columns={{ xs: 1, sm: 1, md: 8, lg: 8 }} align="center" justify="center" >
           <Grid item xs={1} sm={3} md={3}>
             <Container>
-              <Stack direction="row" spacing={2}>
-                <Typography variant="h6" component="div">
-                  Filters
-                </Typography>
-                <Button size="small" onClick={handleResetFilters}>Reset</Button>
-              </Stack>
+              <Box><Typography variant="h6" component="span">
+                Filters
+              </Typography>
+                <Button size="small" onClick={handleResetFilters}>Reset</Button></Box>
               <RegionSelector regions={regions} onRegionsChange={handleRegionsChange} />
               <MarketCapSlider marketCapRange={marketCapRange} onMarketCapChange={handleMarketCapChange} />
             </Container>
           </Grid>
-          <Grid item xs={1} sm={4} md={5} lg={5}>
+          <Grid item xs={1} sm={1} md={5} lg={5}>
             <Box>
               <TabContext value={tabMenuValue} >
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                   <TabList onChange={handleTabMenuChange} centered aria-label="tab menu">
                     <Tab label="Decks" value="0" />
-                    <Tab label={companiesLabel} value="1" />
+                    <Tab label={`Companies (${companiesCounter})`} value="1" />
                     <Tab label="Projects" value="2" />
                   </TabList>
                 </Box>
