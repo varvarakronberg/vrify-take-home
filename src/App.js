@@ -46,7 +46,7 @@ function App() {
 
 
   const getData = () => {
-    fetch('data.json', {
+    fetch('http://localhost:5000/data?minMarketCap=50', {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -174,14 +174,16 @@ function App() {
                   {currentPageData && currentPageData.length > 0 ?
                     <div>
                       <SortMenu sortMethod={sortMethod} onSortMethodChange={handleSortMethodChange} />
-                      <Grid container spacing={2} columns={{ xs: 1, sm: 1, md: 2, lg: 3 }} align="center" justify="center" >
+                      <Grid container spacing={2} columns={{ xs: 1, sm: 1, md: 2, lg: 3 }} align="center" justify="center" data-testid="company-list">
                         {currentPageData.map(company => {
                           return <Grid key={company.id} item xs={1} sm={1} md={1} lg={1}>
                             <Company imageUrl={company.image_url} name={company.company_name} region={company.region} cap={company.market_cap} />
                           </Grid>
                         })}
                       </Grid>
-                      <Box sx={{ m: 4, width: 'auto' }} ><Pagination count={numberOfPages} page={currentPage} onChange={handlePageChange} /></Box>
+                      <Box sx={{ m: 4, width: 'auto' }} >
+                        <Pagination count={numberOfPages} page={currentPage} onChange={handlePageChange} data-testid="pagination" />
+                      </Box>
                     </div>
                     : <Typography>No matches found</Typography>}
                 </TabPanel>

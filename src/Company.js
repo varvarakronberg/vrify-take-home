@@ -4,7 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 
 import Typography from '@mui/material/Typography';
 
-const regionsMap = {
+export const regionsMap = {
     'africa': 'Africa',
     'oceania': 'Oceania',
     'europe': 'Europe',
