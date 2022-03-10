@@ -20,7 +20,7 @@ export function sortData(data, method) {
             console.log('sorting A-Z');
             break;
         case NAMES_ZA:
-            sortedData = data.sort((company1, company2) => company1.company_name.toLowerCase() < company2.company_name.toLowerCase() ? 1 : -1)
+            sortedData = data.sort((company1, company2) => company1.company_name.toLowerCase() > company2.company_name.toLowerCase() ? -1 : 1)
             console.log('sorting by Z-A');
             break;
         default:
