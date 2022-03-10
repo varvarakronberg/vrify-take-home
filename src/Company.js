@@ -4,6 +4,16 @@ import CardMedia from '@mui/material/CardMedia';
 
 import Typography from '@mui/material/Typography';
 
+export const regionsMap = {
+    'africa': 'Africa',
+    'oceania': 'Oceania',
+    'europe': 'Europe',
+    'northamerica': 'North America',
+    'southamerica': 'South America',
+    'centralamerica': 'Central America',
+    'asia': "Asia",
+}
+
 export default function Company({ imageUrl, name, region, cap }) {
     return (
         <Card sx={{ maxWidth: 345 }}>
@@ -18,10 +28,10 @@ export default function Company({ imageUrl, name, region, cap }) {
                     {name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Market Cap: {cap}
+                    Market Cap: {+cap.toFixed(2)}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Region: {region}
+                    Region: {regionsMap[region]}
                 </Typography>
             </CardContent>
         </Card>
